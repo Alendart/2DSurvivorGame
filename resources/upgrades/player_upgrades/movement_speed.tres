@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://qdrnor0ghvn8"]
+
+[ext_resource type="Texture2D" uid="uid://bj0segclreove" path="res://assets/pack/Tiles/tile_0114.png" id="1_7mvyd"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_jw8u4"]
+
+[resource]
+script = ExtResource("2_jw8u4")
+id = "movement"
+ability_type = "player"
+max_lvl = 5
+name = "Increase health"
+description = "Increase your movement speed by 10%"
+picture = ExtResource("1_7mvyd")

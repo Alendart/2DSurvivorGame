@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvb44k0g3bdqi"]
+
+[ext_resource type="Script" path="res://scenes/managers/enemy_manager/enemy_manager.gd" id="1_pc87c"]
+[ext_resource type="PackedScene" uid="uid://bo2c3b7gfr5dx" path="res://scenes/game_object/basic_enemy/basic_enemy.tscn" id="2_judck"]
+[ext_resource type="PackedScene" uid="uid://qdplb1x0e3d3" path="res://scenes/game_object/wizard_enemy/wizard_enemy.tscn" id="3_yq3sg"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_pc87c")
+basic_enemy = ExtResource("2_judck")
+wizard_enemy = ExtResource("3_yq3sg")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="HyperWaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

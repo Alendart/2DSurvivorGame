@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bb637y7rtaqh4"]
+
+[ext_resource type="Texture2D" uid="uid://pof5g37i20nq" path="res://scenes/ability/sword_ability/sword.png" id="1_f0qnv"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_8hixn"]
+
+[resource]
+script = ExtResource("2_8hixn")
+id = "sword_qty"
+ability_type = "sword"
+max_lvl = 3
+name = "Sword Attacks"
+description = "Increases sword attacks quantity by 1"
+picture = ExtResource("1_f0qnv")

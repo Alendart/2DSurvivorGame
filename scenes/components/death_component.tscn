@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://unnmh5f0lssu"]
+
+[ext_resource type="Texture2D" uid="uid://bg80r34ccciis" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_6ohs7"]
+[ext_resource type="Script" path="res://scenes/components/death_component.gd" id="1_dul8r"]
+
+[sub_resource type="Animation" id="Animation_2xkrf"]
+resource_name = "default"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fng1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85qvx"]
+_data = {
+"RESET": SubResource("Animation_fng1a"),
+"default": SubResource("Animation_2xkrf")
+}
+
+[sub_resource type="Curve" id="Curve_4b11u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.793103, 0.727273), 0.0, 0.0, 0, 0, Vector2(1, 0.0181818), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_u7kbw"]
+curve = SubResource("Curve_4b11u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mo6l6"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+gravity = Vector3(0, 900, 0)
+initial_velocity_min = 160.0
+initial_velocity_max = 220.0
+angular_velocity_min = -1440.0
+angular_velocity_max = 1440.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_u7kbw")
+
+[node name="DeathComponent" type="Node2D"]
+script = ExtResource("1_dul8r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_85qvx")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_mo6l6")
+texture = ExtResource("1_6ohs7")
+lifetime = 0.5
+one_shot = true
+fixed_fps = 0
+interpolate = false

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://ng7vhfe0xfyd"]
+
+[ext_resource type="Texture2D" uid="uid://b0u3eco2admrq" path="res://assets/pack/Tiles/tile_0062.png" id="1_wbvxn"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_iaiem"]
+
+[resource]
+script = ExtResource("2_iaiem")
+id = "damage"
+ability_type = "player"
+max_lvl = 10
+name = "Attack damage"
+description = "Increase all damage done by 1"
+picture = ExtResource("1_wbvxn")

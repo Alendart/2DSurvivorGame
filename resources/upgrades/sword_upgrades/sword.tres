@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://cd8tr35uwoqw0"]
+
+[ext_resource type="PackedScene" uid="uid://bl6qgk76ciuei" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="1_38e0u"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="1_a526w"]
+[ext_resource type="Texture2D" uid="uid://pof5g37i20nq" path="res://scenes/ability/sword_ability/sword.png" id="1_f175r"]
+
+[resource]
+script = ExtResource("1_a526w")
+ability_controller_scene = ExtResource("1_38e0u")
+id = "sword"
+ability_type = "sword"
+max_lvl = 1
+name = "Sword"
+description = "Slashing sword ability"
+picture = ExtResource("1_f175r")

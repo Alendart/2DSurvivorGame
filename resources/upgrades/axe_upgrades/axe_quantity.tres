@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bhdjy1h74m1q3"]
+
+[ext_resource type="Texture2D" uid="uid://xdjt76k6jeo2" path="res://scenes/ability/axe_ability/axe.png" id="1_oyjra"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_w4xhf"]
+
+[resource]
+script = ExtResource("2_w4xhf")
+id = "axe_qty"
+ability_type = "axe"
+max_lvl = 3
+name = "Axe Attacks"
+description = "Increase spinning axe attack quantity by 1"
+picture = ExtResource("1_oyjra")

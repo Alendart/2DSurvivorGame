@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://baqp14b2jv3ex"]
+
+[ext_resource type="Script" path="res://scenes/UI/experience_bar.gd" id="1_2l86p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdtd6"]
+bg_color = Color(0.458824, 0.890196, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="ExperienceBar" type="CanvasLayer"]
+script = ExtResource("1_2l86p")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_gdtd6")
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 6
+text = "Level : 1"

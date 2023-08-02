@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bpmbmrtxkimmo"]
+
+[ext_resource type="Texture2D" uid="uid://bcb6n7v41ockm" path="res://assets/pack/Tiles/tile_0115.png" id="1_07ljc"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_833vk"]
+
+[resource]
+script = ExtResource("2_833vk")
+id = "max_health"
+ability_type = "player"
+max_lvl = 3
+name = "Increase health"
+description = "Increase your max health by 5 hp"
+picture = ExtResource("1_07ljc")

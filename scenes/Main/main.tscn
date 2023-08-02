@@ -1,0 +1,61 @@
+[gd_scene load_steps=20 format=3 uid="uid://djilpbhbv3jme"]
+
+[ext_resource type="PackedScene" uid="uid://bm0j73k0g1mog" path="res://scenes/UI/arena_time_ui.tscn" id="1_bqlvk"]
+[ext_resource type="PackedScene" uid="uid://bfkms7xnv0ouq" path="res://scenes/game_camera/game_camera.tscn" id="1_umthc"]
+[ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_whp5o"]
+[ext_resource type="PackedScene" uid="uid://b7ij4idtcm1rl" path="res://scenes/managers/arena_time_manager/arena_time_manager.tscn" id="2_h0m6c"]
+[ext_resource type="PackedScene" uid="uid://cfuh5ybjcwat7" path="res://scenes/UI/end_screen.tscn" id="2_h2x53"]
+[ext_resource type="PackedScene" uid="uid://baqp14b2jv3ex" path="res://scenes/UI/experience_bar.tscn" id="2_wfgqm"]
+[ext_resource type="PackedScene" uid="uid://dvb44k0g3bdqi" path="res://scenes/managers/enemy_manager/enemy_manager.tscn" id="3_0v1vj"]
+[ext_resource type="PackedScene" uid="uid://ccvkvkoc34ivq" path="res://scenes/UI/vingette.tscn" id="3_m7act"]
+[ext_resource type="PackedScene" uid="uid://f2dqrfwb8jup" path="res://scenes/managers/expierience_manager/expierience_manager.tscn" id="4_hrpbh"]
+[ext_resource type="PackedScene" uid="uid://cc04dyb3a02ja" path="res://scenes/game_object/world_terrain/world_terrain.tscn" id="5_wo87i"]
+[ext_resource type="PackedScene" uid="uid://cgyd50g4ad2o3" path="res://scenes/managers/update_manager/update_manager.tscn" id="6_giqbp"]
+[ext_resource type="PackedScene" uid="uid://cko51anvjbbg5" path="res://scenes/game_object/player/player.tscn" id="6_xm0rb"]
+[ext_resource type="Resource" uid="uid://bhdjy1h74m1q3" path="res://resources/upgrades/axe_upgrades/axe_quantity.tres" id="9_h8vfe"]
+[ext_resource type="Resource" uid="uid://cron5gmc3houc" path="res://resources/upgrades/axe_upgrades/axe_rate.tres" id="10_6lkjq"]
+[ext_resource type="Resource" uid="uid://bb637y7rtaqh4" path="res://resources/upgrades/sword_upgrades/sword_quantity.tres" id="11_kwgam"]
+[ext_resource type="Resource" uid="uid://h6syxlm4d6mu" path="res://resources/upgrades/sword_upgrades/sword_rate.tres" id="12_u7mvj"]
+[ext_resource type="Resource" uid="uid://ng7vhfe0xfyd" path="res://resources/upgrades/player_upgrades/damage.tres" id="13_qay85"]
+[ext_resource type="Resource" uid="uid://bpmbmrtxkimmo" path="res://resources/upgrades/player_upgrades/max_health.tres" id="14_djuvx"]
+[ext_resource type="Resource" uid="uid://qdrnor0ghvn8" path="res://resources/upgrades/player_upgrades/movement_speed.tres" id="15_l4yfc"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_whp5o")
+end_screen = ExtResource("2_h2x53")
+
+[node name="Vingette" parent="." instance=ExtResource("3_m7act")]
+
+[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_bqlvk")]
+arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_wfgqm")]
+experience_manager = NodePath("../ExpierienceManager")
+
+[node name="ArenaTimeManager" parent="." instance=ExtResource("2_h0m6c")]
+
+[node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("3_0v1vj")]
+arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExpierienceManager" parent="." instance=ExtResource("4_hrpbh")]
+
+[node name="UpdateManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_giqbp")]
+upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("13_qay85"), ExtResource("14_djuvx"), ExtResource("15_l4yfc")])
+upgrade_pool_weight = Array[int]([10, 20, 10, 20, 20, 5, 5])
+ability_pool_weight = Array[int]([10, 10])
+experience_manager = NodePath("../ExpierienceManager")
+
+[node name="GameCamera" parent="." instance=ExtResource("1_umthc")]
+process_mode = 3
+
+[node name="WorldTerrain" parent="." instance=ExtResource("5_wo87i")]
+
+[node name="Entites" type="Node2D" parent="." groups=["entities_layer"]]
+y_sort_enabled = true
+
+[node name="Player" parent="Entites" instance=ExtResource("6_xm0rb")]
+unique_name_in_owner = true
+position = Vector2(209, 166)
+
+[node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]
+y_sort_enabled = true
