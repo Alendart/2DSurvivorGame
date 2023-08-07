@@ -12,12 +12,23 @@ var current_ability= {}
 # Tutaj można przerobić ability na tablicę stringów zamiast na obiekt
 var current_upgrade = {}
 
-var upgrade_table = WeightedTable.new()
+var upgrade_table = WeightedTable.new() as WeightedTable
 
 func _ready():
 	experience_manager.level_up.connect(on_level_up)
+	set_up_weighted_table()
 
+
+func set_up_weighted_table():
+	var index = 0
+	for upgrade in upgrade_pool:
+		upgrade_table.add_item(upgrade,upgrade_pool_weight[index],"upgrade")
+		index += 1
 	
+	var index2 = 0
+	for ability in ability_pool:
+		upgrade_table.add_item(ability,ability_pool_weight[index],"ability")
+		index += 1
 
 func pick_upgrades():
 	var choosen_upgrades: Array[AbilityUpgrade]

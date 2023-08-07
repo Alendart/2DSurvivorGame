@@ -14,6 +14,7 @@ func pick_item(array:Array = items, sum:int = weight_sum):
 		iteration_sum += i["weight"]
 		if choosen_weight <= iteration_sum:
 			return i["item"]
+	return []
 
 func delete_item(item):
 	items = items.filter(func(e): e["item"] != item)
@@ -23,4 +24,4 @@ func pick_item_from_categories(category:Array[String]):
 	for cat in category:
 		filtered_table += items.filter(func(e): e["category"] == cat)
 	var sum_table = filtered_table.reduce(func(acc,item): acc + item["weight"],0)
-	pick_item(filtered_table, sum_table)
+	return pick_item(filtered_table, sum_table)
