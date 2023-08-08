@@ -66,7 +66,7 @@ func _on_collision_area_body_exited(_body:Node2D):
 func _on_damage_interval_timeout():
 	check_and_deal_damage()
 
-func on_new_ability_added(ability:Ability, _current_abilities:Dictionary):
+func on_new_ability_added(ability:Ability, _current_abilities:Array):
 	abilities.add_child(ability.ability_controller_scene.instantiate())
 
 func on_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary):

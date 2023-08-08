@@ -5,7 +5,7 @@ signal level_up(lvl:int)
 
 var current_experience = 0
 var current_level = 1
-var experience_full_bar = 5
+var experience_full_bar = 1
 var experience_progress_multiply = 10
 
 func _ready():

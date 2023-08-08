@@ -50,7 +50,7 @@ func _on_timer_timeout():
 	if player == null:
 		return
 	
-	var enemy = enemy_table.pick_item() as PackedScene
+	var enemy = enemy_table.pick_item()[0] as PackedScene
 	var enemy_instance = enemy.instantiate()
 	var entites_layer = get_tree().get_first_node_in_group("entities_layer")
 	entites_layer.add_child(enemy_instance)
