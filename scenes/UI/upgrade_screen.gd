@@ -7,6 +7,7 @@ signal upgrade_picked(upgrade:AbilityUpgrade)
 @onready var card_container: HBoxContainer = %CardContainer
 
 func _ready():
+	get_tree().get_first_node_in_group("ArenaTimer").visible = false
 	get_tree().paused = true
 	
 
@@ -25,6 +26,7 @@ func on_card_clicked(upgrade:AbilityUpgrade):
 	upgrade_picked.emit(upgrade)
 	$AnimationPlayer.play("out")
 	await $AnimationPlayer.animation_finished
+	get_tree().get_first_node_in_group("ArenaTimer").visible = true
 	get_tree().paused = false
 	queue_free()
 
