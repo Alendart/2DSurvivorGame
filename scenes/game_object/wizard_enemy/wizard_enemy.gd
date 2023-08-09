@@ -7,7 +7,7 @@ var is_moving = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$HurtBoxComponent.hit.connect(on_hit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,3 +24,6 @@ func _process(delta):
 
 func set_is_moving(moving:bool):
 	is_moving = moving
+	
+func on_hit():
+	$RandomHitStreamPlayer2DComponent.play_random()

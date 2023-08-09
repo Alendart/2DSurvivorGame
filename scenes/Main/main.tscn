@@ -26,7 +26,7 @@ end_screen = ExtResource("2_h2x53")
 
 [node name="Vingette" parent="." instance=ExtResource("3_m7act")]
 
-[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_bqlvk")]
+[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") groups=["ArenaTimer"] instance=ExtResource("1_bqlvk")]
 arena_time_manager = NodePath("../ArenaTimeManager")
 
 [node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_wfgqm")]

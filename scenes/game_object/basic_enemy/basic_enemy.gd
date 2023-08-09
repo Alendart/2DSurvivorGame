@@ -4,6 +4,8 @@ const MAX_SPEED = 45
 
 @onready var velocity_component:VelocityComponent = $VelocityComponent
 
+func _ready():
+	$HurtBoxComponent.hit.connect(on_hit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -24,4 +26,5 @@ func get_direction_to_player():
 		return (player.global_position - global_position).normalized()
 	return Vector2.ZERO
 
-
+func on_hit():
+	$RandomHitStreamPlayer2DComponent.play_random()

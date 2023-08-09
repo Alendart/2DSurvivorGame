@@ -18,4 +18,5 @@ func on_died():
 	death_animation.global_position = self_position
 	
 	$AnimationPlayer.play("default")
+	$RandomStreamPlayer2DComponent.play_random()
 	
