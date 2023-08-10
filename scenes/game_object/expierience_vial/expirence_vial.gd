@@ -39,5 +39,7 @@ func _on_area_2d_area_entered(_area):
 	tween.chain()
 	tween.tween_callback(collect)
 	
+	$RandomStreamPlayer2DComponent.play_random()
+	
 
 
