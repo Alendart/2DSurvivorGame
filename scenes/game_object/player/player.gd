@@ -52,6 +52,7 @@ func update_health_bar():
 func check_and_deal_damage():
 	if qty_colliding_bodies > 0 and damage_timer.is_stopped():
 		health_component.damage(1)
+		$HitRandomStreamPlayer.play_random()
 		GameEvents.emit_player_damaged()
 		damage_timer.start()
 
