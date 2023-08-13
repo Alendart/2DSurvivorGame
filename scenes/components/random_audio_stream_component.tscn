@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scenes/components/random_audio_stream_component.gd" id="1_x5fw0"]
 
 [node name="RandomAudioStreamComponent" type="AudioStreamPlayer"]
+bus = &"sfx"
 script = ExtResource("1_x5fw0")
