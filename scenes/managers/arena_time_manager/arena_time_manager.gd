@@ -24,7 +24,7 @@ func get_time_elapsed():
 func _on_timer_timeout():
 	var end_screen_instance = end_screen.instantiate()
 	add_child(end_screen_instance)
-	
+	end_screen_instance.play_sound()
 
 func difficulty_counter(time:float):
 	if timer.time_left <= time:

@@ -14,15 +14,25 @@ func _ready():
 	
 	get_tree().paused = true
 	
+	%Restart.pressed.connect(on_restart_pressed)
+	%QuitButton.pressed.connect(on_quit_button_pressed)
+
 
 func set_defeat():
 	title_label.text = "Defeat"
 	desc_label.text = "You lost!"
+	play_sound(true)
 
-func _on_restart_pressed():
+func play_sound(defeat:bool = false):
+	if defeat:
+		$LooseStreamPlayer.play()
+	else:
+		$VicotryStreamPlayer.play()
+
+func on_restart_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
 
 
-func _on_quit_button_pressed():
+func on_quit_button_pressed():
 	get_tree().quit()
