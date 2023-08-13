@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfuh5ybjcwat7"]
+[gd_scene load_steps=9 format=3 uid="uid://cfuh5ybjcwat7"]
 
 [ext_resource type="Script" path="res://scenes/UI/end_screen.gd" id="1_tv4kd"]
 [ext_resource type="PackedScene" uid="uid://dypo0m4080kh3" path="res://scenes/UI/sound_button.tscn" id="2_e28e6"]
+[ext_resource type="AudioStream" uid="uid://dkcxtfqy3r6ve" path="res://assets/Audio/Win_sound.ogg" id="3_40vqd"]
+[ext_resource type="AudioStream" uid="uid://bdwm1mf3ka0x6" path="res://assets/Audio/Loose_sound.ogg" id="4_jg500"]
 
 [sub_resource type="Animation" id="Animation_2pwv1"]
 length = 0.001
@@ -138,3 +140,11 @@ unique_name_in_owner = true
 layout_mode = 2
 action_mode = 0
 text = "Quit"
+
+[node name="VicotryStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_40vqd")
+bus = &"sfx"
+
+[node name="LooseStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jg500")
+bus = &"sfx"
