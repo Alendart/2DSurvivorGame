@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal options_quited
+
 @onready var global_slider = %GlobalSlider
 @onready var sfx_slider = %SFXSlider
 @onready var music_slider = %MusicSlider
@@ -8,9 +10,9 @@ extends CanvasLayer
 
 
 func _ready():
-	global_slider.drag_ended.connect(on_global_change)
-	sfx_slider.drag_ended.connect(on_sfx_change)
-	music_slider.drag_ended.connect(on_music_change)
+	global_slider.value_changed.connect(on_slider_change.bind("Master"))
+	sfx_slider.value_changed.connect(on_slider_change.bind("sfx"))
+	music_slider.value_changed.connect(on_slider_change.bind("music"))
 	window_mode_button.pressed.connect(on_window_mode_pressed)
 	back_button.pressed.connect(on_back_button_pressed)
 	check_window_mode_text()
@@ -40,17 +42,8 @@ func update_sliders():
 	sfx_slider.value = get_bus_volume_percent("sfx")
 	music_slider.value = get_bus_volume_percent("music")
 
-func on_global_change(value_changed:bool):
-	if value_changed:
-		set_bus_volume("Master",global_slider.value)
-
-func on_sfx_change(value_changed:bool):
-	if value_changed:
-		set_bus_volume("sfx",sfx_slider.value)
-
-func on_music_change(value_changed:bool):
-	if value_changed:
-		set_bus_volume("music",music_slider.value)
+func on_slider_change(value:float, bus_name:String):
+	set_bus_volume(bus_name,value)
 
 func on_window_mode_pressed():
 	var mode = DisplayServer.window_get_mode()
@@ -62,4 +55,4 @@ func on_window_mode_pressed():
 	check_window_mode_text()
 
 func on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
+	options_quited.emit()
