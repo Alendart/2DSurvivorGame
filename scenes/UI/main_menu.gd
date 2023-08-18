@@ -12,7 +12,7 @@ func on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
 
 func on_option_pressed():
-	pass
+	get_tree().change_scene_to_file("res://scenes/UI/options_menu.tscn")
 
 func on_quit_pressed():
 	get_tree().quit()
