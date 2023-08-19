@@ -92,10 +92,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 8
+theme_type_variation = &"BlueOtlineLabel"
 text = "Congratulations! You leveled up!
 Choose your skill:"
 horizontal_alignment = 1

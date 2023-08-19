@@ -38,11 +38,7 @@ theme_override_constants/separation = 24
 [node name="GameTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 6
+theme_type_variation = &"BlueOtlineLabel"
 theme_override_font_sizes/font_size = 32
 text = "Options"
 
@@ -55,11 +51,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/GlobalOptionContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
+theme_type_variation = &"BlueOtlineLabel"
 text = "Global Volume"
 
 [node name="GlobalSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/GlobalOptionContainer"]
@@ -73,11 +65,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/SFXOptionContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
+theme_type_variation = &"BlueOtlineLabel"
 text = "SFX Volume"
 
 [node name="SFXSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/SFXOptionContainer"]
@@ -91,11 +79,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/MusicOptionContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
+theme_type_variation = &"BlueOtlineLabel"
 text = "Music Volume"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/MusicOptionContainer"]
@@ -109,11 +93,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/WindowOptionContainer"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.129412, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
+theme_type_variation = &"BlueOtlineLabel"
 text = "Window Mode"
 
 [node name="WindowModeButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionContainer/WindowOptionContainer" instance=ExtResource("3_1ncsv")]
