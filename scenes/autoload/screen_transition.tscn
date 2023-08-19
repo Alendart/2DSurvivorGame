@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtbqmy78qtatf"]
+
+[ext_resource type="Script" path="res://scenes/autoload/screen_transition.gd" id="1_afxl1"]
+[ext_resource type="Shader" path="res://scenes/autoload/screen_transition.gdshader" id="1_wt1g3"]
+[ext_resource type="Texture2D" uid="uid://cd6dhuwsdg218" path="res://assets/Ui/screen_transition.png" id="2_cniop"]
+
+[sub_resource type="Animation" id="Animation_otjdh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fullsize:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_i8o0e"]
+resource_name = "out"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fullsize:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.38),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.75, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eg7x3"]
+resource_name = "in"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fullsize:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s26se"]
+_data = {
+"RESET": SubResource("Animation_otjdh"),
+"in": SubResource("Animation_eg7x3"),
+"out": SubResource("Animation_i8o0e")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4p8ke"]
+shader = ExtResource("1_wt1g3")
+shader_parameter/transition_color = Color(0.247059, 0.14902, 0.192157, 1)
+shader_parameter/percent = 0.0
+shader_parameter/transition_texture = ExtResource("2_cniop")
+
+[node name="ScreenTransition" type="CanvasLayer"]
+process_mode = 3
+layer = 6
+script = ExtResource("1_afxl1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_s26se")
+}
+
+[node name="Fullsize" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_4p8ke")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.247059, 0.14902, 0.192157, 0)
