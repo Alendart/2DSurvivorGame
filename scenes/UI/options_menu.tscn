@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://oxdkmr216obh"]
+[gd_scene load_steps=5 format=3 uid="uid://oxdkmr216obh"]
 
 [ext_resource type="Script" path="res://scenes/UI/options_menu.gd" id="1_vgysa"]
+[ext_resource type="PackedScene" uid="uid://ccvkvkoc34ivq" path="res://scenes/UI/vingette.tscn" id="2_b1pfk"]
 [ext_resource type="PackedScene" uid="uid://cc04dyb3a02ja" path="res://scenes/game_object/world_terrain/world_terrain.tscn" id="2_uy087"]
 [ext_resource type="PackedScene" uid="uid://dypo0m4080kh3" path="res://scenes/UI/sound_button.tscn" id="3_1ncsv"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_vgysa")
 
 [node name="WorldTerrain" parent="." instance=ExtResource("2_uy087")]
@@ -110,3 +112,6 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Back"
+
+[node name="Vingette" parent="." instance=ExtResource("2_b1pfk")]
+layer = 3
