@@ -55,4 +55,6 @@ func on_window_mode_pressed():
 	check_window_mode_text()
 
 func on_back_button_pressed():
+	ScreenTransition.transition_in()
+	await ScreenTransition.transition_halfway
 	options_quited.emit()

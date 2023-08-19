@@ -10,15 +10,21 @@ func _ready():
 
 
 func on_play_pressed():
+	ScreenTransition.transition_in()
+	await ScreenTransition.transition_halfway
 	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
 
 func on_option_pressed():
+	ScreenTransition.transition_in()
+	await ScreenTransition.transition_halfway
 	var options = options_scene.instantiate()
 	add_child(options)
 	options.options_quited.connect(on_options_quited.bind(options))
 	
 
 func on_quit_pressed():
+	ScreenTransition.transition_in()
+	await ScreenTransition.transition_halfway
 	get_tree().quit()
 
 func on_options_quited(options:Node):
