@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8l01p84ikiu"]
+
+[ext_resource type="Script" path="res://scenes/components/money_drop_component.gd" id="1_varqt"]
+[ext_resource type="PackedScene" uid="uid://c8j6n3bn7nqjv" path="res://scenes/game_object/money_coin/money_coin.tscn" id="2_bj6en"]
+
+[node name="MoneyDropComponent" type="Node"]
+script = ExtResource("1_varqt")
+drop_percent = 0.1
+money = ExtResource("2_bj6en")
