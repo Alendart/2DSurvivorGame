@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bo2c3b7gfr5dx"]
+[gd_scene load_steps=23 format=3 uid="uid://bo2c3b7gfr5dx"]
 
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_bfx7b"]
 [ext_resource type="Texture2D" uid="uid://bg80r34ccciis" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_hg32x"]
 [ext_resource type="PackedScene" uid="uid://dkw2u1gp1kyb8" path="res://scenes/components/health_component.tscn" id="2_1bddb"]
 [ext_resource type="PackedScene" uid="uid://cfdhkuo3u27w1" path="res://scenes/components/vial_drop_component.tscn" id="3_is8a7"]
+[ext_resource type="PackedScene" uid="uid://bw8l01p84ikiu" path="res://scenes/components/money_drop_component.tscn" id="4_8f35e"]
 [ext_resource type="PackedScene" uid="uid://unnmh5f0lssu" path="res://scenes/components/death_component.tscn" id="4_kvw5l"]
 [ext_resource type="PackedScene" uid="uid://cvdgun1exwtrw" path="res://scenes/components/hurt_box_component.tscn" id="4_odqtw"]
 [ext_resource type="PackedScene" uid="uid://x7qbbffk14r4" path="res://scenes/components/velocity_component.tscn" id="4_p46xp"]
@@ -78,7 +79,7 @@ _data = {
 "walk": SubResource("Animation_ef5ij")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ne3le"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymqxk"]
 resource_local_to_scene = true
 shader = ExtResource("6_mhtr2")
 shader_parameter/lerp_percent = 0.0
@@ -104,7 +105,10 @@ libraries = {
 [node name="HealthComponent" parent="." instance=ExtResource("2_1bddb")]
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_is8a7")]
-drop_percent = 1.0
+drop_percent = 0.5
+health_component = NodePath("../HealthComponent")
+
+[node name="MoneyDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_8f35e")]
 health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("4_p46xp")]
@@ -114,7 +118,7 @@ acceleration = 40.0
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_c4u6a")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_ne3le")
+hit_flash_material = SubResource("ShaderMaterial_ymqxk")
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_kvw5l")]
 health_component = NodePath("../HealthComponent")
@@ -128,7 +132,6 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_ghia5")
 
 [node name="RandomHitStreamPlayer2DComponent" parent="." instance=ExtResource("11_h6sj2")]
-max_distance = 300.0
 streams = Array[AudioStream]([ExtResource("10_4qiqu"), ExtResource("12_0fgcw"), ExtResource("13_yiuk2"), ExtResource("14_wvnwi"), ExtResource("15_fyav0")])
 
 [node name="Visuals" type="Node2D" parent="."]
