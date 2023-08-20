@@ -1,6 +1,7 @@
 extends Node
 
 signal experience_vial_collected(number:float)
+signal money_coin_collected(number:float)
 signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary)
 signal new_ability_added(ability:AbilityUpgrade, current_abilities:Array)
 signal player_damaged
@@ -8,6 +9,8 @@ signal player_damaged
 func emit_expierience_vial_collected(number:float):
 	experience_vial_collected.emit(number)
 	
+func emit_money_coin_collected(number:float):
+	money_coin_collected.emit(number)
 
 func emit_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 	ability_upgrade_added.emit(upgrade, current_upgrades)
