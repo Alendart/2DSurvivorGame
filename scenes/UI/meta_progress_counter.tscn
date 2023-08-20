@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm7d5u2k70ujo"]
+
+[ext_resource type="Script" path="res://scenes/UI/meta_progress_counter.gd" id="1_t6m6b"]
+[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/tile_0102.png" id="2_khr5w"]
+
+[node name="MetaProgressCounter" type="CanvasLayer"]
+script = ExtResource("1_t6m6b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="QuantityLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Coins"
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "x"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_khr5w")
