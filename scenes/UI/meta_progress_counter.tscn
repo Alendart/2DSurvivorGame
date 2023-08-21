@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm7d5u2k70ujo"]
 
 [ext_resource type="Script" path="res://scenes/UI/meta_progress_counter.gd" id="1_t6m6b"]
-[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/tile_0102.png" id="2_khr5w"]
+[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/coin.png" id="2_khr5w"]
 
 [node name="MetaProgressCounter" type="CanvasLayer"]
 script = ExtResource("1_t6m6b")

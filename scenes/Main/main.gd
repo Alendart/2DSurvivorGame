@@ -7,6 +7,7 @@ var pause_menu = preload("res://scenes/UI/pause_menu.tscn")
 func _ready():
 	%Player.health_component.died.connect(on_player_died)
 	$ExpierienceManager.level_up.emit(1)
+	GameEvents.emit_money_coin_collected(MetaProgression.save_data["meta_upgrade_currency"])
 	
 
 func _unhandled_input(event):

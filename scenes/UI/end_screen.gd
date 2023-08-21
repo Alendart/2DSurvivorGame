@@ -11,7 +11,7 @@ func _ready():
 	tween.tween_property(panel_container, "scale", Vector2.ZERO, 0)
 	tween.tween_property(panel_container, "scale", Vector2.ONE, 0.3)\
 	.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-	
+	MetaProgression.save_files()
 	get_tree().paused = true
 	
 	%Restart.pressed.connect(on_restart_pressed)

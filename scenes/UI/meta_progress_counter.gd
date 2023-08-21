@@ -10,7 +10,7 @@ func _ready():
 
 func on_money_coin_collect(number: float):
 	if coins_qty != null:
-		coins_qty += 1
+		coins_qty += number
 		update_coin_display()
 
 func update_coin_display():

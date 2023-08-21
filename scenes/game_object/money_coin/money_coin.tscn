@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://d032fcrsfb5h7" path="res://assets/Audio/impactGeneric_light_002.ogg" id="5_ukpqu"]
 [ext_resource type="AudioStream" uid="uid://dwy3byh3lmsi2" path="res://assets/Audio/impactGeneric_light_003.ogg" id="6_8n2ec"]
 [ext_resource type="AudioStream" uid="uid://bqengf2sggl6u" path="res://assets/Audio/impactGeneric_light_004.ogg" id="7_jw44p"]
-[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/tile_0102.png" id="8_5c7ne"]
+[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/coin.png" id="8_5c7ne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4fui"]
 

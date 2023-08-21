@@ -55,7 +55,6 @@ func pick_upgrades():
 func on_level_up(lvl:int):
 	current_lvl = lvl
 	var choosen_upgrades = pick_upgrades()
-	print(choosen_upgrades)
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
 	upgrade_screen_instance.set_ability_upgrades(choosen_upgrades)
