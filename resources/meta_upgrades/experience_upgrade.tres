@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://dosr8r63ntjdv"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_aatha"]
+[ext_resource type="Texture2D" uid="uid://06fhetwpgrt3" path="res://scenes/game_object/expierience_vial/expirence_vial.png" id="2_2n7wa"]
+
+[resource]
+script = ExtResource("1_aatha")
+id = "experience_gain"
+max_lvl = 2
+money_cost = 500
+texture = ExtResource("2_2n7wa")
+title = "Increase Experience"
+description = "Increase experience point drop rate by 10%"
