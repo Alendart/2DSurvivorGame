@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcg8peeinwhd2"]
+
+[ext_resource type="Script" path="res://scenes/UI/meta_upgrade_menu.gd" id="1_y641a"]
+[ext_resource type="PackedScene" uid="uid://cc04dyb3a02ja" path="res://scenes/game_object/world_terrain/world_terrain.tscn" id="2_lj314"]
+[ext_resource type="Resource" uid="uid://dosr8r63ntjdv" path="res://resources/meta_upgrades/experience_upgrade.tres" id="2_wrnhc"]
+[ext_resource type="PackedScene" uid="uid://ccvkvkoc34ivq" path="res://scenes/UI/vingette.tscn" id="4_l0k76"]
+
+[node name="MetaUpgradeMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_y641a")
+upgrades = Array[Resource("res://resources/meta_upgrades/meta_upgrade.gd")]([ExtResource("2_wrnhc")])
+
+[node name="WorldTerrain" parent="." instance=ExtResource("2_lj314")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="Vingette" parent="." instance=ExtResource("4_l0k76")]
+layer = 3
