@@ -34,6 +34,11 @@ func add_meta_upgrade(upgrade: MetaUpgrade):
 	save_data["meta_upgrades"][upgrade.id]["lvl"] += 1
 	save_files()
 
+func check_upgrade_lvl(upgrade_id: String):
+	if save_data["meta_upgrades"].has(upgrade_id):
+		return save_data["meta_upgrades"][upgrade_id]["lvl"]
+	return 0
+
 func on_money_coin_collected(number: float):
 	if number == null:
 		return

@@ -19,18 +19,18 @@ func check_price():
 	purchase_button.disabled = current_amount < actual_upgrade.money_cost
 
 func check_upgrade_lvl():
-	if MetaProgression.save_data["meta_upgrades"].has(actual_upgrade.id):
-		var actual_lvl = MetaProgression.save_data["meta_upgrades"][actual_upgrade.id]["lvl"]
-		if actual_lvl < actual_upgrade.max_lvl:
-			lvl_label.text = "%d" % actual_lvl +  " / %d" % actual_upgrade.max_lvl
-		else:
-			lvl_label.text = "%d" % actual_lvl +  " / %d" % actual_upgrade.max_lvl
-			purchase_button.visible = false
-			sold_label.visible = true
+	var actual_lvl = MetaProgression.check_upgrade_lvl(actual_upgrade.id)
+	if actual_lvl < actual_upgrade.max_lvl:
+		lvl_label.text = "%d" % actual_lvl +  " / %d" % actual_upgrade.max_lvl
 	else:
-		lvl_label.text = "0 / %d" % actual_upgrade.max_lvl
+		lvl_label.text = "%d" % actual_lvl +  " / %d" % actual_upgrade.max_lvl
+		purchase_button.visible = false
+		sold_label.visible = true
+	
 
 func set_meta_upgrade(upgrade: MetaUpgrade):
+	if upgrade == null:
+		return
 	actual_upgrade = upgrade
 	name_label.text = upgrade.title
 	desc_label.text = upgrade.description
