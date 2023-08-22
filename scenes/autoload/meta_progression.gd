@@ -5,13 +5,13 @@ const SAVE_FILE_PATH = "user://game.save"
 var save_data: Dictionary = {
 	"win_count":0,
 	"loss_count":0,
-	"meta_upgrade_currency":0,
+	"meta_upgrade_currency":2000,
 	"meta_upgrades":{}
 	}
 
 func _ready():
 	GameEvents.money_coin_collected.connect(on_money_coin_collected)
-	load_save_files()
+	load_saved_files()
 	
 	
 
@@ -19,7 +19,7 @@ func save_files():
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	file.store_var(save_data)
 
-func load_save_files():
+func load_saved_files():
 	if !FileAccess.file_exists(SAVE_FILE_PATH):
 		return
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
