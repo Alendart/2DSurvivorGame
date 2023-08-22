@@ -19,7 +19,6 @@ func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	
 
-
 func set_up_weighted_table():
 	var index = 0
 	for upgrade in upgrade_pool:
@@ -30,7 +29,6 @@ func set_up_weighted_table():
 	for ability in ability_pool:
 		upgrade_table.add_item(ability,ability_pool_weight[index2],"ability")
 		index2 += 1
-
 
 func pick_upgrades():
 	var choosen_upgrades: Array[AbilityUpgrade]
@@ -48,10 +46,6 @@ func pick_upgrades():
 	
 	return choosen_upgrades
 
-
-
-
-
 func on_level_up(lvl:int):
 	current_lvl = lvl
 	var choosen_upgrades = pick_upgrades()
@@ -59,8 +53,6 @@ func on_level_up(lvl:int):
 	add_child(upgrade_screen_instance)
 	upgrade_screen_instance.set_ability_upgrades(choosen_upgrades)
 	upgrade_screen_instance.upgrade_picked.connect(on_upgrade_picked)
-
-
 
 func apply_upgrades(upgrade: AbilityUpgrade):
 	if upgrade.id == upgrade.ability_type:

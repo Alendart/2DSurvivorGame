@@ -10,7 +10,7 @@ func _ready():
 	$HurtBoxComponent.hit.connect(on_hit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_moving:
 		velocity_component.accelerate_to_player()
 	else:
