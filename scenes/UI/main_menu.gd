@@ -1,13 +1,13 @@
 extends CanvasLayer
 
 @export var options_scene: PackedScene
+@export var meta_upgrade_menu: PackedScene
 
 func _ready():
 	%PlayButton.pressed.connect(on_play_pressed)
 	%OptionButton.pressed.connect(on_option_pressed)
 	%QuitButton.pressed.connect(on_quit_pressed)
-	
-
+	%UpgradeButton.pressed.connect(on_upgrade_pressed)
 
 func on_play_pressed():
 	ScreenTransition.transition_in()
@@ -30,3 +30,12 @@ func on_quit_pressed():
 func on_options_quited(options:Node):
 	options.queue_free()
 
+func on_upgrade_pressed():
+	ScreenTransition.transition_in()
+	await ScreenTransition.transition_halfway
+	var meta_upgrade_menu_instance = meta_upgrade_menu.instantiate()
+	add_child(meta_upgrade_menu_instance)
+	meta_upgrade_menu_instance.upgrade_quited.connect(on_upgrades_quited.bind(meta_upgrade_menu_instance))
+
+func on_upgrades_quited(meta_menu:Node):
+	meta_menu.queue_free()
