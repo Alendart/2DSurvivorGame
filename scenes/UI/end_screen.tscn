@@ -123,17 +123,17 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Restart" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_e28e6")]
+[node name="Continue" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_e28e6")]
 unique_name_in_owner = true
 layout_mode = 2
 action_mode = 0
-text = "Restart"
+text = "Continue"
 
 [node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_e28e6")]
 unique_name_in_owner = true
 layout_mode = 2
 action_mode = 0
-text = "Quit"
+text = "Quit to Menu"
 
 [node name="VicotryStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_40vqd")

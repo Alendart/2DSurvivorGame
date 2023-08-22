@@ -14,7 +14,7 @@ func _ready():
 	MetaProgression.save_files()
 	get_tree().paused = true
 	
-	%Restart.pressed.connect(on_restart_pressed)
+	%Continue.pressed.connect(on_continue_pressed)
 	%QuitButton.pressed.connect(on_quit_button_pressed)
 
 
@@ -29,14 +29,15 @@ func play_sound(defeat:bool = false):
 	else:
 		$VicotryStreamPlayer.play()
 
-func on_restart_pressed():
+func on_continue_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
 
 
 func on_quit_button_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
