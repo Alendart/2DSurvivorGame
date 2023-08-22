@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-signal upgrade_quited
-
 @export var upgrades: Array[MetaUpgrade] 
 @onready var back_button = $MarginContainer/BackButton
 @onready var grid_container = $MarginContainer/MarginContainer/GridContainer
@@ -21,4 +19,4 @@ func _ready():
 func on_back_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
-	upgrade_quited.emit()
+	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")

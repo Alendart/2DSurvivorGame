@@ -33,9 +33,5 @@ func on_options_quited(options:Node):
 func on_upgrade_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
-	var meta_upgrade_menu_instance = meta_upgrade_menu.instantiate()
-	add_child(meta_upgrade_menu_instance)
-	meta_upgrade_menu_instance.upgrade_quited.connect(on_upgrades_quited.bind(meta_upgrade_menu_instance))
+	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
 
-func on_upgrades_quited(meta_menu:Node):
-	meta_menu.queue_free()
