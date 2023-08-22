@@ -1,13 +1,16 @@
 extends CanvasLayer
 
 @export var upgrades: Array[MetaUpgrade] 
-@onready var back_button = $MarginContainer/BackButton
-@onready var grid_container = $MarginContainer/MarginContainer/GridContainer
+@onready var back_button = %BackButton
+@onready var grid_container = %GridContainer
 
 
 var meta_upgrade_scene = preload("res://scenes/UI/meta_upgrade_card.tscn")
 
 func _ready():
+	for child in grid_container.get_children():
+		child.queue_free()
+	
 	back_button.pressed.connect(on_back_pressed)
 	GameEvents.emit_money_coin_collected(MetaProgression.save_data["meta_upgrade_currency"])
 	
