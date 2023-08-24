@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://djilpbhbv3jme"]
+[gd_scene load_steps=23 format=3 uid="uid://djilpbhbv3jme"]
 
 [ext_resource type="PackedScene" uid="uid://bm0j73k0g1mog" path="res://scenes/UI/arena_time_ui.tscn" id="1_bqlvk"]
 [ext_resource type="PackedScene" uid="uid://bfkms7xnv0ouq" path="res://scenes/game_camera/game_camera.tscn" id="1_umthc"]
@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cgyd50g4ad2o3" path="res://scenes/managers/update_manager/update_manager.tscn" id="6_giqbp"]
 [ext_resource type="PackedScene" uid="uid://cko51anvjbbg5" path="res://scenes/game_object/player/player.tscn" id="6_xm0rb"]
 [ext_resource type="Resource" uid="uid://bhdjy1h74m1q3" path="res://resources/upgrades/axe_upgrades/axe_quantity.tres" id="9_h8vfe"]
+[ext_resource type="PackedScene" uid="uid://bo2c3b7gfr5dx" path="res://scenes/game_object/basic_enemy/basic_rat.tscn" id="9_s7hn4"]
 [ext_resource type="Resource" uid="uid://cron5gmc3houc" path="res://resources/upgrades/axe_upgrades/axe_rate.tres" id="10_6lkjq"]
+[ext_resource type="PackedScene" uid="uid://dwvyca5rw4owf" path="res://scenes/game_object/tough_rat/tough_rat.tscn" id="10_ool5j"]
 [ext_resource type="Resource" uid="uid://bb637y7rtaqh4" path="res://resources/upgrades/sword_upgrades/sword_quantity.tres" id="11_kwgam"]
 [ext_resource type="Resource" uid="uid://h6syxlm4d6mu" path="res://resources/upgrades/sword_upgrades/sword_rate.tres" id="12_u7mvj"]
 [ext_resource type="Resource" uid="uid://ng7vhfe0xfyd" path="res://resources/upgrades/player_upgrades/damage.tres" id="13_qay85"]
@@ -39,6 +41,8 @@ experience_manager = NodePath("../ExpierienceManager")
 
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("3_0v1vj")]
 arena_time_manager = NodePath("../ArenaTimeManager")
+basic_rat = ExtResource("9_s7hn4")
+tough_rat = ExtResource("10_ool5j")
 
 [node name="ExpierienceManager" parent="." instance=ExtResource("4_hrpbh")]
 
