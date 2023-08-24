@@ -1,9 +1,9 @@
 extends Node
 
 @export var arena_time_manager: Node
-@export var basic_enemy: PackedScene
+@export var basic_rat: PackedScene
+@export var tough_rat: PackedScene
 @export var wizard_enemy: PackedScene
-
 @onready var timer: Timer = $Timer
 @onready var hyper_wave_timer: Timer = $HyperWaveTimer
 
@@ -13,7 +13,7 @@ var base_wait_time = 0
 var enemy_table = WeightedTable.new()
 
 func _ready():
-	enemy_table.add_item(basic_enemy,10)
+	enemy_table.add_item(basic_rat,10)
 	
 	base_wait_time = timer.wait_time
 	arena_time_manager.rise_difficulty.connect(on_rise_difficulty)
@@ -67,10 +67,15 @@ func on_rise_difficulty(lvl:int):
 		timer.wait_time = new_wait_time
 	
 	if lvl == 10:
-		enemy_table.add_item(wizard_enemy,20)
+		enemy_table.add_item(tough_rat,10)
 	
+	if lvl == 20:
+		enemy_table.add_item(wizard_enemy,15)
+	
+	if lvl == 30:
+		enemy_table.delete_item(basic_rat)
 
 func on_hyper_wave_timer_timeout():
 	print("Time to rest...")
 	timer.wait_time = base_wait_time + 0.5
-	difficulty_timer_decrease = difficulty_timer_decrease / 20 
+	difficulty_timer_decrease = difficulty_timer_decrease
