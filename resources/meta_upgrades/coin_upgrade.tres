@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://p1wr84y8u1iy"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_me0jp"]
+[ext_resource type="Texture2D" uid="uid://bo7m0ohx37sj2" path="res://scenes/game_object/money_coin/coin.png" id="2_otfa1"]
+
+[resource]
+script = ExtResource("1_me0jp")
+id = "money_drop"
+max_lvl = 5
+money_cost = 2000
+texture = ExtResource("2_otfa1")
+title = "Money Drop"
+description = "Increase Gold Coin drop rate by 10%"

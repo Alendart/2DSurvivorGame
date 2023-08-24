@@ -106,6 +106,8 @@ _data = {
 
 [node name="MetaUpgradeCard" type="PanelContainer" groups=["meta_upgrade_card"]]
 custom_minimum_size = Vector2(175, 0)
+offset_right = 175.0
+offset_bottom = 196.0
 pivot_offset = Vector2(75, 115)
 script = ExtResource("1_eecsr")
 
@@ -129,6 +131,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 170)
 layout_mode = 2
 focus_mode = 2
 mouse_filter = 2
@@ -170,10 +173,10 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/Control"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = -12.0
-offset_top = 4.0
-offset_right = 4.0
-offset_bottom = 20.0
+offset_left = -11.0
+offset_top = -2.0
+offset_right = 5.0
+offset_bottom = 14.0
 scale = Vector2(3, 3)
 size_flags_horizontal = 8
 mouse_filter = 2
@@ -213,15 +216,22 @@ text = "0 / 1"
 
 [node name="PurchaseButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("15_svtmk")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "Purchase"
+icon_alignment = 1
 
 [node name="SoldLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 theme_type_variation = &"BlueOtlineLabel"
 theme_override_colors/font_color = Color(0.909804, 0.270588, 0.215686, 1)
 theme_override_font_sizes/font_size = 32
 text = "SOLD OUT"
+horizontal_alignment = 1
+vertical_alignment = 2

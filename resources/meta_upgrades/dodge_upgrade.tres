@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://talmcaph2tnm"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_06agk"]
+[ext_resource type="Texture2D" uid="uid://bcb6n7v41ockm" path="res://assets/pack/Tiles/tile_0115.png" id="2_6p50t"]
+
+[resource]
+script = ExtResource("1_06agk")
+id = "health_regen"
+max_lvl = 2
+money_cost = 1000
+texture = ExtResource("2_6p50t")
+title = "Health regeneration"
+description = "Increase health regeneration by 0.5 HP / 10 s"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://ca5qu4vaiphvy"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_c35t0"]
+[ext_resource type="Texture2D" uid="uid://bcb6n7v41ockm" path="res://assets/pack/Tiles/tile_0115.png" id="2_xlxha"]
+
+[resource]
+script = ExtResource("1_c35t0")
+id = "max_health"
+max_lvl = 4
+money_cost = 800
+texture = ExtResource("2_xlxha")
+title = "Max Health"
+description = "Increase max health by 25%"
