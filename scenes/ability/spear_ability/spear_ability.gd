@@ -16,14 +16,12 @@ func _ready():
 	
 
 
-func make_attack(enemies_in_range:Array):
-	print("Rozpoczynam atak")
+func make_attack(enemies_in_range:Array, attack_qty:int):
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null or enemies_in_range.size() == 0:
 		return
 	
 	var enemy_to_hit = enemies_in_range[0]
-	print("Powinna się dziać animacja")
 	var tween = create_tween()
 	global_position = player.global_position
 	rotation = (enemy_to_hit.global_position - player.global_position).angle() + deg_to_rad(90)
@@ -32,15 +30,15 @@ func make_attack(enemies_in_range:Array):
 	var pull_position = pull_vector + player.global_position
 	var finish_vector = (enemy_to_hit.global_position - player.global_position).normalized() * 50
 	var finnish_position = finish_vector + player.global_position
+	
 	tween.tween_property(sprite_2d,"scale",Vector2.ZERO,0.01)
+	tween.parallel().tween_property(collision_shape_2d,"disabled",true,0.01)
 	tween.tween_property(sprite_2d,"scale",Vector2(1.5,1.5),0.1)
 	tween.tween_property(self,"position",pull_position,0.2)
-#	collision_shape_2d.disabled = false 
 	tween.tween_property(self,"position",finnish_position,0.3).set_delay(0.2)
-	tween.parallel().tween_property(collision_shape_2d,"disabled",false,0.01)
+	tween.parallel().tween_property(collision_shape_2d,"disabled",false,0.01).set_delay(0.2)
 	tween.tween_property(collision_shape_2d,"disabled",true,0.01)
 	tween.tween_property(sprite_2d,"scale",Vector2.ZERO,0.1)
 	tween.tween_callback(queue_free)
-	print("Wszystko zrobione")
 	
 

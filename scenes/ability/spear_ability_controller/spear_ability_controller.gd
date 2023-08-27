@@ -14,7 +14,7 @@ var default_wait_time
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	default_wait_time = timer.wait_time
-#	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
+	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
 	actual_damage = base_damage
 
 
@@ -36,21 +36,21 @@ func _on_timer_timeout():
 	var spear_instance = spear.instantiate()
 	var forgroud_layer = get_tree().get_first_node_in_group("foreground_layer")
 	forgroud_layer.add_child(spear_instance)
-	spear_instance.hitbox.damage = base_damage
-	spear_instance.make_attack(enemies_in_range)
+	spear_instance.hitbox.damage = actual_damage
+	spear_instance.make_attack(enemies_in_range,attacks_per_activation)
 	
 
-#func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
-#	if upgrade.ability_type == "sword":
-#		if upgrade.id == "sword_rate":
-#			var reduction = current_upgrades["sword"]["sword_rate"]["level"] * 0.15
-#			timer.wait_time = default_wait_time * (1-reduction)
-#			timer.start()
-#		if upgrade.id == "sword_qty":
-#			attacks_per_activation = 1 + current_upgrades["sword"]["sword_qty"]["level"]
-#	elif upgrade.ability_type == "player":
-#		if upgrade.id == "damage":
-#			actual_damage = base_damage + (1 * current_upgrades["player"]["damage"]["level"])
+func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
+	if upgrade.ability_type == "spear":
+		if upgrade.id == "spear_rate":
+			var reduction = current_upgrades["spear"]["spear_rate"]["level"] * 0.15
+			timer.wait_time = default_wait_time * (1-reduction)
+			timer.start()
+		if upgrade.id == "spear_qty":
+			attacks_per_activation = 1 + current_upgrades["spear"]["spear_qty"]["level"]
+	elif upgrade.ability_type == "player":
+		if upgrade.id == "damage":
+			actual_damage = base_damage + (1 * current_upgrades["player"]["damage"]["level"])
 #
 
 
