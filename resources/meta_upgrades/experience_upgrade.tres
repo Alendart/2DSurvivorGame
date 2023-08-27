@@ -7,7 +7,7 @@
 script = ExtResource("1_aatha")
 id = "experience_gain"
 max_lvl = 2
-money_cost = 500
+money_cost = 200
 texture = ExtResource("2_2n7wa")
 title = "Increase Experience"
 description = "Increase experience point drop rate by 10%"

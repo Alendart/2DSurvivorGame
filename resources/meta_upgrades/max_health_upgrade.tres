@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://3ux517wymrm1"]
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://ca5qu4vaiphvy"]
 
-[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_003tc"]
-[ext_resource type="Texture2D" uid="uid://crg5lrufmqfhu" path="res://assets/pack/Tiles/tile_0125.png" id="2_xrxif"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_c35t0"]
+[ext_resource type="Texture2D" uid="uid://bcb6n7v41ockm" path="res://assets/pack/Tiles/tile_0115.png" id="2_xlxha"]
 
 [resource]
-script = ExtResource("1_003tc")
-id = "dodge"
-max_lvl = 3
-money_cost = 400
-texture = ExtResource("2_xrxif")
-title = "Increase dodge chance"
-description = "Increase dodge chance by 5%"
+script = ExtResource("1_c35t0")
+id = "max_health"
+max_lvl = 4
+money_cost = 10
+texture = ExtResource("2_xlxha")
+title = "Max Health"
+description = "Increase max health by 25%"

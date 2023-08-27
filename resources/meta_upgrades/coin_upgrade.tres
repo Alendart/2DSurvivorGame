@@ -7,7 +7,7 @@
 script = ExtResource("1_me0jp")
 id = "money_drop"
 max_lvl = 5
-money_cost = 2000
+money_cost = 500
 texture = ExtResource("2_otfa1")
 title = "Money Drop"
 description = "Increase Gold Coin drop rate by 10%"
