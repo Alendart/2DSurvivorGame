@@ -106,10 +106,10 @@ _data = {
 }
 
 [node name="MetaUpgradeCard" type="PanelContainer" groups=["meta_upgrade_card"]]
-custom_minimum_size = Vector2(175, 0)
+custom_minimum_size = Vector2(175, 200)
 offset_right = 175.0
 offset_bottom = 196.0
-pivot_offset = Vector2(75, 115)
+pivot_offset = Vector2(87, 100)
 theme = ExtResource("1_2b6fc")
 script = ExtResource("1_eecsr")
 

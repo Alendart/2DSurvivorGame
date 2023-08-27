@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://c638ptd16sq5l"]
+
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_15e4y"]
+[ext_resource type="Texture2D" uid="uid://b0u3eco2admrq" path="res://assets/pack/Tiles/tile_0062.png" id="2_5y1dp"]
+
+[resource]
+script = ExtResource("1_15e4y")
+id = "damage"
+max_lvl = 10
+money_cost = 10
+texture = ExtResource("2_5y1dp")
+title = "Weapon Damage"
+description = "Increase weapon damage by 1"
