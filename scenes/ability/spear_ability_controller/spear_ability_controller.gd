@@ -28,11 +28,16 @@ func _on_timer_timeout():
 	)
 	if enemies_in_range.size() == 0:
 		return
+		
+	enemies_in_range.sort_custom(func(a:Node2D,b:Node2D):
+		return a.global_position.distance_squared_to(player.global_position) < b.global_position.distance_squared_to(player.global_position)
+	)
 	
 	var spear_instance = spear.instantiate()
 	var forgroud_layer = get_tree().get_first_node_in_group("foreground_layer")
 	forgroud_layer.add_child(spear_instance)
-	spear_instance.make_attack()
+	spear_instance.hitbox.damage = base_damage
+	spear_instance.make_attack(enemies_in_range)
 	
 
 #func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):

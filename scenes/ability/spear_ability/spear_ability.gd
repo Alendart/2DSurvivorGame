@@ -11,26 +11,16 @@ const MAX_RANGE = 100
 var base_rotation = Vector2.RIGHT
 
 func _ready():
-	collision_shape_2d.disabled = true
+	pass
 	
 	
 
 
-func make_attack():
+func make_attack(enemies_in_range:Array):
 	print("Rozpoczynam atak")
-	var enemies_list = get_tree().get_nodes_in_group("enemy")
 	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null or enemies_list.size() == 0:
+	if player == null or enemies_in_range.size() == 0:
 		return
-	var enemies_in_range = enemies_list.filter(func(enemy:Node2D):
-		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE,2)
-	)
-	if enemies_in_range.size() == 0:
-		return
-	
-	enemies_in_range.sort_custom(func(a:Node2D,b:Node2D):
-		return a.global_position.distance_squared_to(player.global_position) < b.global_position.distance_squared_to(player.global_position)
-	)
 	
 	var enemy_to_hit = enemies_in_range[0]
 	print("Powinna się dziać animacja")
@@ -38,13 +28,19 @@ func make_attack():
 	global_position = player.global_position
 	rotation = (enemy_to_hit.global_position - player.global_position).angle() + deg_to_rad(90)
 	
-	var pull_position = ((player.global_position - enemy_to_hit.global_position) + player.global_position)
-	var finnish_position = ((enemy_to_hit.global_position - player.global_position) + player.global_position)
+	var pull_vector = (player.global_position - enemy_to_hit.global_position).normalized() * 20
+	var pull_position = pull_vector + player.global_position
+	var finish_vector = (enemy_to_hit.global_position - player.global_position).normalized() * 50
+	var finnish_position = finish_vector + player.global_position
 	tween.tween_property(sprite_2d,"scale",Vector2.ZERO,0.01)
 	tween.tween_property(sprite_2d,"scale",Vector2(1.5,1.5),0.1)
 	tween.tween_property(self,"position",pull_position,0.2)
+#	collision_shape_2d.disabled = false 
 	tween.tween_property(self,"position",finnish_position,0.3).set_delay(0.2)
-	
+	tween.parallel().tween_property(collision_shape_2d,"disabled",false,0.01)
+	tween.tween_property(collision_shape_2d,"disabled",true,0.01)
+	tween.tween_property(sprite_2d,"scale",Vector2.ZERO,0.1)
+	tween.tween_callback(queue_free)
 	print("Wszystko zrobione")
 	
 
