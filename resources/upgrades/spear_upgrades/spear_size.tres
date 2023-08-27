@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://dcme1485yscob"]
+
+[ext_resource type="Texture2D" uid="uid://nj2hds473t5t" path="res://scenes/ability/spear_ability/spear.png" id="1_wchye"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_5cufn"]
+
+[resource]
+script = ExtResource("2_5cufn")
+id = "spear_size"
+ability_type = "spear"
+max_lvl = 1
+name = "Spear Weapon Size"
+description = "Increase spear size"
+picture = ExtResource("1_wchye")
