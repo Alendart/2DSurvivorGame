@@ -68,10 +68,8 @@ func on_rise_difficulty(lvl:int):
 	
 	if lvl == 10:
 		enemy_table.add_item(tough_rat,10)
-	
 	if lvl == 20:
 		enemy_table.add_item(wizard_enemy,15)
-	
 	if lvl == 30:
 		enemy_table.delete_item(basic_rat)
 
