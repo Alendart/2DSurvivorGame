@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://djilpbhbv3jme"]
+[gd_scene load_steps=30 format=3 uid="uid://djilpbhbv3jme"]
 
 [ext_resource type="PackedScene" uid="uid://bm0j73k0g1mog" path="res://scenes/UI/arena_time_ui.tscn" id="1_bqlvk"]
 [ext_resource type="PackedScene" uid="uid://bfkms7xnv0ouq" path="res://scenes/game_camera/game_camera.tscn" id="1_umthc"]
@@ -23,8 +23,12 @@
 [ext_resource type="Resource" uid="uid://bpmbmrtxkimmo" path="res://resources/upgrades/player_upgrades/max_health.tres" id="14_djuvx"]
 [ext_resource type="Resource" uid="uid://qdrnor0ghvn8" path="res://resources/upgrades/player_upgrades/movement_speed.tres" id="15_l4yfc"]
 [ext_resource type="Resource" uid="uid://cy2t7lt02d35f" path="res://resources/upgrades/axe_upgrades/axe.tres" id="20_d1yqj"]
+[ext_resource type="Resource" uid="uid://bin4p66urm6a8" path="res://resources/upgrades/spear_upgrades/spear_rate.tres" id="20_kofj4"]
 [ext_resource type="Resource" uid="uid://cd8tr35uwoqw0" path="res://resources/upgrades/sword_upgrades/sword.tres" id="21_lk67c"]
+[ext_resource type="Resource" uid="uid://dcme1485yscob" path="res://resources/upgrades/spear_upgrades/spear_size.tres" id="21_wb31c"]
+[ext_resource type="Resource" uid="uid://n8wq6jj7qel3" path="res://resources/upgrades/spear_upgrades/spear_qty.tres" id="22_fvudk"]
 [ext_resource type="Resource" uid="uid://bvtwlumb5dddo" path="res://resources/upgrades/spear_upgrades/spear.tres" id="22_ne1km"]
+[ext_resource type="Resource" uid="uid://bj4rq0d5wdm25" path="res://resources/upgrades/spear_upgrades/spear_lenght.tres" id="23_cn74g"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_whp5o")
@@ -50,8 +54,8 @@ tough_rat = ExtResource("10_ool5j")
 [node name="ExpierienceManager" parent="." instance=ExtResource("4_hrpbh")]
 
 [node name="UpdateManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_giqbp")]
-upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("13_qay85"), ExtResource("14_djuvx"), ExtResource("15_l4yfc")])
-upgrade_pool_weight = Array[int]([10, 20, 10, 20, 20, 5, 5])
+upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("13_qay85"), ExtResource("14_djuvx"), ExtResource("15_l4yfc"), ExtResource("20_kofj4"), ExtResource("21_wb31c"), ExtResource("22_fvudk"), ExtResource("23_cn74g")])
+upgrade_pool_weight = Array[int]([10, 20, 10, 20, 20, 5, 5, 20, 10, 10, 20])
 ability_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("20_d1yqj"), ExtResource("21_lk67c"), ExtResource("22_ne1km")])
 ability_pool_weight = Array[int]([10, 10, 10])
 experience_manager = NodePath("../ExpierienceManager")
