@@ -36,8 +36,8 @@ func _on_timer_timeout():
 				break
 			var enemy_to_hit = enemies_in_range[i]
 			var sword_scene = sword.instantiate() as SwordAbility
-			var forgroud_layer = get_tree().get_first_node_in_group("foreground_layer")
-			forgroud_layer.add_child(sword_scene)
+			var foregroud_layer = get_tree().get_first_node_in_group("foreground_layer")
+			foregroud_layer.add_child(sword_scene)
 			sword_scene.hitbox.damage = actual_damage
 			
 			sword_scene.global_position = enemy_to_hit.global_position
