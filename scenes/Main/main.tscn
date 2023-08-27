@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://djilpbhbv3jme"]
+[gd_scene load_steps=29 format=3 uid="uid://djilpbhbv3jme"]
 
 [ext_resource type="PackedScene" uid="uid://bm0j73k0g1mog" path="res://scenes/UI/arena_time_ui.tscn" id="1_bqlvk"]
 [ext_resource type="PackedScene" uid="uid://bfkms7xnv0ouq" path="res://scenes/game_camera/game_camera.tscn" id="1_umthc"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://dwvyca5rw4owf" path="res://scenes/game_object/tough_rat/tough_rat.tscn" id="10_ool5j"]
 [ext_resource type="Resource" uid="uid://bb637y7rtaqh4" path="res://resources/upgrades/sword_upgrades/sword_quantity.tres" id="11_kwgam"]
 [ext_resource type="Resource" uid="uid://h6syxlm4d6mu" path="res://resources/upgrades/sword_upgrades/sword_rate.tres" id="12_u7mvj"]
-[ext_resource type="Resource" uid="uid://ng7vhfe0xfyd" path="res://resources/upgrades/player_upgrades/damage.tres" id="13_qay85"]
 [ext_resource type="Resource" uid="uid://bpmbmrtxkimmo" path="res://resources/upgrades/player_upgrades/max_health.tres" id="14_djuvx"]
 [ext_resource type="Resource" uid="uid://qdrnor0ghvn8" path="res://resources/upgrades/player_upgrades/movement_speed.tres" id="15_l4yfc"]
 [ext_resource type="Resource" uid="uid://cy2t7lt02d35f" path="res://resources/upgrades/axe_upgrades/axe.tres" id="20_d1yqj"]
@@ -54,8 +53,8 @@ tough_rat = ExtResource("10_ool5j")
 [node name="ExpierienceManager" parent="." instance=ExtResource("4_hrpbh")]
 
 [node name="UpdateManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_giqbp")]
-upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("13_qay85"), ExtResource("14_djuvx"), ExtResource("15_l4yfc"), ExtResource("20_kofj4"), ExtResource("21_wb31c"), ExtResource("22_fvudk"), ExtResource("23_cn74g")])
-upgrade_pool_weight = Array[int]([10, 20, 10, 20, 20, 5, 5, 20, 10, 10, 20])
+upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("14_djuvx"), ExtResource("15_l4yfc"), ExtResource("20_kofj4"), ExtResource("21_wb31c"), ExtResource("22_fvudk"), ExtResource("23_cn74g")])
+upgrade_pool_weight = Array[int]([10, 20, 10, 20, 5, 5, 20, 10, 10, 20])
 ability_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("20_d1yqj"), ExtResource("21_lk67c"), ExtResource("22_ne1km")])
 ability_pool_weight = Array[int]([10, 10, 10])
 experience_manager = NodePath("../ExpierienceManager")
