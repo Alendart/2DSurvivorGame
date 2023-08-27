@@ -5,7 +5,7 @@ const SAVE_FILE_PATH = "user://game.save"
 var save_data: Dictionary = {
 	"win_count":0,
 	"loss_count":0,
-	"meta_upgrade_currency":2000,
+	"meta_upgrade_currency":0,
 	"meta_upgrades":{}
 	}
 
