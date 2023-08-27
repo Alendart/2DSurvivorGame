@@ -26,7 +26,11 @@ func pick_item(array:Array = items, sum:int = weight_sum, qty:int = 1):
 	
 
 func delete_item(item):
-	items = items.filter(func(e): return e["item"] != item)
+	items = items.filter(func(e):
+		if e["item"] == item:
+			weight_sum -= e["weight"]
+		return e["item"] != item
+		)
 
 func pick_item_from_categories(category:Array[String],qty:int = 1):
 	var filtered_table = []
