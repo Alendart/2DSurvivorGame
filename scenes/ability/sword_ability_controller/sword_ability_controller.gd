@@ -16,7 +16,11 @@ func _ready():
 	default_wait_time = timer.wait_time
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
 	actual_damage = base_damage
+	check_damage_upgrade()
 
+func check_damage_upgrade():
+	var current_modifier = MetaProgression.check_upgrade_lvl("damage")
+	actual_damage = base_damage + current_modifier
 
 func _on_timer_timeout():
 	var enemies_list = get_tree().get_nodes_in_group("enemy")

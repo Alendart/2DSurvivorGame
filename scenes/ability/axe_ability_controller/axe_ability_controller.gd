@@ -14,7 +14,12 @@ func _ready():
 	default_wait_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
-	
+	check_damage_upgrade()
+
+
+func check_damage_upgrade():
+	var current_modifier = MetaProgression.check_upgrade_lvl("damage")
+	actual_damage = base_damage + current_modifier
 
 
 
