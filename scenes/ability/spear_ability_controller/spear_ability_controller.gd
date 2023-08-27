@@ -8,6 +8,8 @@ extends Node
 var base_damage = 5
 var actual_damage:int
 var attacks_per_activation = 1
+var size_modifier = 0
+var lenght_modifier = 0
 var default_wait_time
 
 
@@ -33,12 +35,14 @@ func _on_timer_timeout():
 		return a.global_position.distance_squared_to(player.global_position) < b.global_position.distance_squared_to(player.global_position)
 	)
 	
-	var spear_instance = spear.instantiate()
-	var forgroud_layer = get_tree().get_first_node_in_group("foreground_layer")
-	forgroud_layer.add_child(spear_instance)
-	spear_instance.hitbox.damage = actual_damage
-	spear_instance.make_attack(enemies_in_range,attacks_per_activation)
+	for i in attacks_per_activation:
+		var spear_instance = spear.instantiate()
+		var forgroud_layer = get_tree().get_first_node_in_group("foreground_layer")
+		forgroud_layer.add_child(spear_instance)
+		spear_instance.hitbox.damage = actual_damage
+		spear_instance.make_attack(enemies_in_range,i,size_modifier,lenght_modifier)
 	
+
 
 func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 	if upgrade.ability_type == "spear":
@@ -48,6 +52,10 @@ func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 			timer.start()
 		if upgrade.id == "spear_qty":
 			attacks_per_activation = 1 + current_upgrades["spear"]["spear_qty"]["level"]
+		if upgrade.id == "spear_size":
+			size_modifier = current_upgrades["spear"]["spear_size"]["level"]
+		if upgrade.id == "spear_lenght":
+			lenght_modifier = 0.15 * current_upgrades["spear"]["spear_lenght"]["level"]
 	elif upgrade.ability_type == "player":
 		if upgrade.id == "damage":
 			actual_damage = base_damage + (1 * current_upgrades["player"]["damage"]["level"])
