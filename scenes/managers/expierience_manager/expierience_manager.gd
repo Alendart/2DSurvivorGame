@@ -6,7 +6,7 @@ signal level_up(lvl:int)
 var current_experience = 0
 var current_level = 1
 var experience_full_bar = 1
-var experience_progress_multiply = 10
+var experience_progress_multiply = 5
 
 func _ready():
 	GameEvents.experience_vial_collected.connect(on_experience_vial_collected)
