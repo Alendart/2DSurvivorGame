@@ -137,14 +137,14 @@ libraries = {
 }
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_mod7w")]
-max_health = 25.0
+max_health = 30.0
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_6ii25")]
-drop_percent = 0.75
+drop_percent = 0.7
 health_component = NodePath("../HealthComponent")
 
 [node name="MoneyDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_es3a4")]
-drop_percent = 0.2
+drop_percent = 0.4
 health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("5_cttue")]
