@@ -17,12 +17,23 @@ var default_wait_time
 func _ready():
 	default_wait_time = timer.wait_time
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
-	actual_damage = base_damage
 	check_damage_upgrade()
+	check_actual_player_upgrades()
+	actual_damage = base_damage
 
 func check_damage_upgrade():
 	var current_modifier = MetaProgression.check_upgrade_lvl("damage")
-	actual_damage = base_damage + current_modifier
+	base_damage = base_damage + current_modifier
+
+func check_actual_player_upgrades():
+	var upgrade_manager = get_tree().get_first_node_in_group("Upgrade_manager")
+	if upgrade_manager == null:
+		return
+	var current_upgrades = upgrade_manager.check_upgrades()
+	if current_upgrades.has("player"):
+		if current_upgrades["player"].has("damage"):
+			actual_damage = base_damage + (5 * current_upgrades["player"]["damage"]["level"])
+	return
 
 func _on_timer_timeout():
 	var enemies_list = get_tree().get_nodes_in_group("enemy")
@@ -62,7 +73,7 @@ func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 			lenght_modifier = 0.15 * current_upgrades["spear"]["spear_lenght"]["level"]
 	elif upgrade.ability_type == "player":
 		if upgrade.id == "damage":
-			actual_damage = base_damage + (1 * current_upgrades["player"]["damage"]["level"])
+			actual_damage = base_damage + (5 * current_upgrades["player"]["damage"]["level"])
 #
 
 

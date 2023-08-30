@@ -4,22 +4,23 @@ extends Node
 
 @onready var timer:Timer = $Timer
 
-var base_damage = 10
+var base_damage = 5
 var actual_damage:int
 var attacks_per_activation = 1
 var default_wait_time
 
 func _ready():
-	actual_damage = base_damage
 	default_wait_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
 	check_damage_upgrade()
+	check_actual_player_upgrades()
+	actual_damage = base_damage
 
 
 func check_damage_upgrade():
 	var current_modifier = MetaProgression.check_upgrade_lvl("damage")
-	actual_damage = base_damage + current_modifier
+	base_damage = base_damage + current_modifier
 
 
 
@@ -35,6 +36,15 @@ func on_timer_timeout():
 		axe_instance.hitbox_component.damage = actual_damage
 	
 	
+func check_actual_player_upgrades():
+	var upgrade_manager = get_tree().get_first_node_in_group("Upgrade_manager")
+	if upgrade_manager == null:
+		return
+	var current_upgrades = upgrade_manager.check_upgrades()
+	if current_upgrades.has("player"):
+		if current_upgrades["player"].has("damage"):
+			actual_damage = base_damage + (5 * current_upgrades["player"]["damage"]["level"])
+	return
 
 func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 	if upgrade.ability_type == "axe":
@@ -46,4 +56,4 @@ func on_ability_upgrade(upgrade:AbilityUpgrade, current_upgrades:Dictionary):
 			attacks_per_activation = 1 + current_upgrades["axe"]["axe_qty"]["level"]
 	elif upgrade.ability_type == "player":
 		if upgrade.id == "damage":
-			actual_damage = base_damage + (1 * current_upgrades["player"]["damage"]["level"])
+			actual_damage = base_damage + (5 * current_upgrades["player"]["damage"]["level"])
