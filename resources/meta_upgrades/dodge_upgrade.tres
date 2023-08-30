@@ -7,7 +7,7 @@
 script = ExtResource("1_003tc")
 id = "dodge"
 max_lvl = 3
-money_cost = 300
+money_cost = 200
 texture = ExtResource("2_xrxif")
 title = "Increase dodge chance"
 description = "Increase dodge chance by 5%"

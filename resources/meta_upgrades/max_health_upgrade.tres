@@ -7,7 +7,7 @@
 script = ExtResource("1_c35t0")
 id = "max_health"
 max_lvl = 4
-money_cost = 10
+money_cost = 200
 texture = ExtResource("2_xlxha")
 title = "Max Health"
 description = "Increase max health by 25%"

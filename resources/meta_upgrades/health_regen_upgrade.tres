@@ -7,7 +7,7 @@
 script = ExtResource("1_06agk")
 id = "health_regen"
 max_lvl = 2
-money_cost = 200
+money_cost = 100
 texture = ExtResource("2_6p50t")
 title = "Health regeneration"
 description = "Increase health regeneration by 0.5 HP / 10 s"

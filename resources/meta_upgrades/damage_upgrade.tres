@@ -7,7 +7,7 @@
 script = ExtResource("1_15e4y")
 id = "damage"
 max_lvl = 10
-money_cost = 10
+money_cost = 100
 texture = ExtResource("2_5y1dp")
 title = "Weapon Damage"
 description = "Increase weapon damage by 1"
