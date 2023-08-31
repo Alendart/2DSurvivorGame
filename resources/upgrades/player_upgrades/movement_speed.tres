@@ -8,6 +8,6 @@ script = ExtResource("2_jw8u4")
 id = "movement"
 ability_type = "player"
 max_lvl = 5
-name = "Increase health"
+name = "Movement speed"
 description = "Increase your movement speed by 10%"
 picture = ExtResource("1_7mvyd")

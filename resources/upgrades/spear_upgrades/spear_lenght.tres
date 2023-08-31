@@ -8,6 +8,6 @@ script = ExtResource("2_nvo3k")
 id = "spear_lenght"
 ability_type = "spear"
 max_lvl = 1
-name = "Spear Attack Duration"
+name = "Attack Duration"
 description = "Increase spear attack duration by 15%"
 picture = ExtResource("1_6mr17")

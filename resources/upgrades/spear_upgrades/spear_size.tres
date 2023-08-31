@@ -8,6 +8,6 @@ script = ExtResource("2_5cufn")
 id = "spear_size"
 ability_type = "spear"
 max_lvl = 1
-name = "Spear Weapon Size"
+name = "Weapon Size"
 description = "Increase spear size"
 picture = ExtResource("1_wchye")

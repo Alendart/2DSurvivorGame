@@ -8,6 +8,6 @@ script = ExtResource("2_8hixn")
 id = "sword_qty"
 ability_type = "sword"
 max_lvl = 3
-name = "Sword Attacks"
+name = "Attacks Qty"
 description = "Increases sword attacks quantity by 1"
 picture = ExtResource("1_f0qnv")

@@ -7,7 +7,7 @@
 script = ExtResource("2_iaiem")
 id = "damage"
 ability_type = "player"
-max_lvl = 10
+max_lvl = 1
 name = "Attack damage"
-description = "Increase all damage done by 1"
+description = "Increase all damage done by 5"
 picture = ExtResource("1_wbvxn")

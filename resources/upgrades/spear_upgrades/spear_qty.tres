@@ -8,6 +8,6 @@ script = ExtResource("2_ntkvg")
 id = "spear_qty"
 ability_type = "spear"
 max_lvl = 2
-name = "Spear Attack Qty"
+name = "Attack Qty"
 description = "Increase spear attack quantity by 1"
 picture = ExtResource("2_v5nad")

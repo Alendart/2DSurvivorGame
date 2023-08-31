@@ -8,6 +8,6 @@ script = ExtResource("2_a7jhf")
 id = "axe_rate"
 ability_type = "axe"
 max_lvl = 5
-name = "Axe Quickness"
+name = "Attack Speed"
 description = "Increases Axe attack rate by 10%"
 picture = ExtResource("1_lwomh")
