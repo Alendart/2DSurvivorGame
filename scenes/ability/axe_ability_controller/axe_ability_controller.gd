@@ -14,8 +14,9 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade)
 	check_damage_upgrade()
-	check_actual_player_upgrades()
 	actual_damage = base_damage
+	
+	check_actual_player_upgrades()
 
 
 func check_damage_upgrade():
