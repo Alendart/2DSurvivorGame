@@ -63,7 +63,7 @@ func _on_timer_timeout():
 
 func on_rise_difficulty(lvl:int):
 	var new_wait_time = base_wait_time - (lvl * difficulty_timer_decrease)
-	if new_wait_time <= 0:
+	if new_wait_time <= 0.05:
 		timer.wait_time = 0.01
 		hyper_wave_timer.start()
 		print("Its begin...")
@@ -86,6 +86,8 @@ func on_rise_difficulty(lvl:int):
 
 func on_hyper_wave_timer_timeout():
 	print("Time to rest...")
-	timer.wait_time = base_wait_time + 0.5
-	hyper_wave_timer.wait_time = hyper_wave_base_wait_time + 0.25
-	difficulty_timer_decrease = difficulty_timer_decrease
+	base_wait_time = base_wait_time + 0.5
+	timer.wait_time = base_wait_time
+	hyper_wave_base_wait_time = hyper_wave_base_wait_time + 0.25
+	hyper_wave_timer.wait_time = hyper_wave_base_wait_time
+
