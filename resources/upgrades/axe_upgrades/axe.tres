@@ -11,5 +11,5 @@ id = "axe"
 ability_type = "axe"
 max_lvl = 1
 name = "Axe"
-description = "Spinning axe ability"
+description = "Axe which will spin around player and damage all hitted enemies"
 picture = ExtResource("1_flxpl")

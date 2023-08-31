@@ -11,5 +11,5 @@ id = "sword"
 ability_type = "sword"
 max_lvl = 1
 name = "Sword"
-description = "Slashing sword ability"
+description = "Sword ability which damage nearest enemy with quick slash"
 picture = ExtResource("1_f175r")

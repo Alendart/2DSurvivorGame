@@ -11,5 +11,5 @@ id = "spear"
 ability_type = "spear"
 max_lvl = 1
 name = "Spear"
-description = "Stab spear ability"
+description = "Stabbing spear ability which will attack multiple enemies in line"
 picture = ExtResource("2_2m6w2")
