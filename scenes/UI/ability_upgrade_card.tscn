@@ -203,7 +203,7 @@ _data = {
 }
 
 [node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
-custom_minimum_size = Vector2(150, 230)
+custom_minimum_size = Vector2(150, 200)
 pivot_offset = Vector2(75, 115)
 script = ExtResource("1_ux0pd")
 
@@ -247,7 +247,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"BlueOtlineLabel"
 theme_override_font_sizes/font_size = 32
-text = "Test"
+text = "Testing name "
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 2
@@ -256,15 +256,25 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"BlueOtlineLabel"
-text = "Something something"
+text = "Something something very very long to fill up long"
 autowrap_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = -55.0
+offset_top = -19.0
+offset_right = 71.0
+offset_bottom = 107.0
+rotation = -0.785398
+scale = Vector2(0.6, 0.6)
 mouse_filter = 2
 texture = ExtResource("2_lwv5y")
 expand_mode = 4
-stretch_mode = 5
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
