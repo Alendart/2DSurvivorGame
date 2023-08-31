@@ -49,6 +49,7 @@ func on_purchase_button_pressed():
 	if actual_upgrade == null:
 		return
 	MetaProgression.save_data["meta_upgrade_currency"] -= actual_upgrade.money_cost
+	GameEvents.emit_money_spend(MetaProgression.save_data["meta_upgrade_currency"])
 	MetaProgression.add_meta_upgrade(actual_upgrade)
 	get_tree().call_group("meta_upgrade_card", "check_price")
 	get_tree().call_group("meta_upgrade_card", "check_upgrade_lvl")
