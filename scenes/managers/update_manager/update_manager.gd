@@ -46,6 +46,9 @@ func pick_upgrades():
 	
 	return choosen_upgrades
 
+func check_upgrades():
+	return current_upgrade
+
 func on_level_up(lvl:int):
 	current_lvl = lvl
 	var choosen_upgrades = pick_upgrades()
@@ -73,8 +76,9 @@ func apply_upgrades(upgrade: AbilityUpgrade):
 		}
 	else:
 		current_upgrade[upgrade.ability_type][upgrade.id]["level"] += 1
-		if current_upgrade[upgrade.ability_type][upgrade.id]["level"] == upgrade.max_lvl:
-			upgrade_table.delete_item(upgrade)
+	
+	if current_upgrade[upgrade.ability_type][upgrade.id]["level"] == upgrade.max_lvl:
+		upgrade_table.delete_item(upgrade)
 		
 	
 	GameEvents.emit_ability_upgrade_added(upgrade,current_upgrade)
