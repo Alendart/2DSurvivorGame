@@ -7,6 +7,7 @@ signal ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades:Dictionary
 signal new_ability_added(ability:AbilityUpgrade, current_abilities:Array)
 signal player_damaged
 signal change_scene(path_to_scene:String)
+signal save_path_changed(path: String)
 
 func emit_expierience_vial_collected(number:float):
 	experience_vial_collected.emit(number)
@@ -31,3 +32,6 @@ func emit_player_damaged():
 
 func emit_change_scene(path_to_scene:String):
 	change_scene.emit(path_to_scene)
+
+func emit_save_path_changed(path: String):
+	save_path_changed.emit(path)
