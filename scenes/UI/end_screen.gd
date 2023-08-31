@@ -33,11 +33,13 @@ func on_continue_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
+	GameEvents.emit_change_scene("res://scenes/UI/meta_upgrade_menu.tscn")
+#	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
 
 
 func on_quit_button_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
+	GameEvents.emit_change_scene("res://scenes/UI/main_menu.tscn")
+#	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")

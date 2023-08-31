@@ -12,7 +12,8 @@ func _ready():
 func on_play_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
-	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
+	GameEvents.emit_change_scene("res://scenes/Main/main.tscn")
+#	get_tree().change_scene_to_file("res://scenes/Main/main.tscn")
 
 func on_option_pressed():
 	ScreenTransition.transition_in()
@@ -33,5 +34,6 @@ func on_options_quited(options:Node):
 func on_upgrade_pressed():
 	ScreenTransition.transition_in()
 	await ScreenTransition.transition_halfway
-	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
+	GameEvents.emit_change_scene("res://scenes/UI/meta_upgrade_menu.tscn")
+#	get_tree().change_scene_to_file("res://scenes/UI/meta_upgrade_menu.tscn")
 
