@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://djilpbhbv3jme"]
+[gd_scene load_steps=32 format=3 uid="uid://djilpbhbv3jme"]
 
 [ext_resource type="PackedScene" uid="uid://bm0j73k0g1mog" path="res://scenes/UI/arena_time_ui.tscn" id="1_bqlvk"]
 [ext_resource type="PackedScene" uid="uid://bfkms7xnv0ouq" path="res://scenes/game_camera/game_camera.tscn" id="1_umthc"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bo2c3b7gfr5dx" path="res://scenes/game_object/basic_enemy/basic_rat.tscn" id="9_s7hn4"]
 [ext_resource type="Resource" uid="uid://cron5gmc3houc" path="res://resources/upgrades/axe_upgrades/axe_rate.tres" id="10_6lkjq"]
 [ext_resource type="PackedScene" uid="uid://dwvyca5rw4owf" path="res://scenes/game_object/tough_rat/tough_rat.tscn" id="10_ool5j"]
+[ext_resource type="PackedScene" uid="uid://cerhfn3kp5mp8" path="res://scenes/game_object/dark_rat/dark_rat.tscn" id="11_7lnx7"]
 [ext_resource type="Resource" uid="uid://bb637y7rtaqh4" path="res://resources/upgrades/sword_upgrades/sword_quantity.tres" id="11_kwgam"]
+[ext_resource type="PackedScene" uid="uid://btf1io8crjwh7" path="res://scenes/game_object/ghost_enemy/ghost_enemy.tscn" id="12_rs2jy"]
 [ext_resource type="Resource" uid="uid://h6syxlm4d6mu" path="res://resources/upgrades/sword_upgrades/sword_rate.tres" id="12_u7mvj"]
 [ext_resource type="Resource" uid="uid://bpmbmrtxkimmo" path="res://resources/upgrades/player_upgrades/max_health.tres" id="14_djuvx"]
 [ext_resource type="Resource" uid="uid://qdrnor0ghvn8" path="res://resources/upgrades/player_upgrades/movement_speed.tres" id="15_l4yfc"]
@@ -28,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://n8wq6jj7qel3" path="res://resources/upgrades/spear_upgrades/spear_qty.tres" id="22_fvudk"]
 [ext_resource type="Resource" uid="uid://bvtwlumb5dddo" path="res://resources/upgrades/spear_upgrades/spear.tres" id="22_ne1km"]
 [ext_resource type="Resource" uid="uid://bj4rq0d5wdm25" path="res://resources/upgrades/spear_upgrades/spear_lenght.tres" id="23_cn74g"]
+[ext_resource type="Resource" uid="uid://ng7vhfe0xfyd" path="res://resources/upgrades/player_upgrades/damage.tres" id="24_nradq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_whp5o")
@@ -49,12 +52,14 @@ experience_manager = NodePath("../ExpierienceManager")
 arena_time_manager = NodePath("../ArenaTimeManager")
 basic_rat = ExtResource("9_s7hn4")
 tough_rat = ExtResource("10_ool5j")
+dark_rat = ExtResource("11_7lnx7")
+ghost_enemy = ExtResource("12_rs2jy")
 
 [node name="ExpierienceManager" parent="." instance=ExtResource("4_hrpbh")]
 
-[node name="UpdateManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("6_giqbp")]
-upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("14_djuvx"), ExtResource("15_l4yfc"), ExtResource("20_kofj4"), ExtResource("21_wb31c"), ExtResource("22_fvudk"), ExtResource("23_cn74g")])
-upgrade_pool_weight = Array[int]([10, 20, 10, 20, 5, 5, 20, 10, 10, 20])
+[node name="UpdateManager" parent="." node_paths=PackedStringArray("experience_manager") groups=["Upgrade_manager"] instance=ExtResource("6_giqbp")]
+upgrade_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("9_h8vfe"), ExtResource("10_6lkjq"), ExtResource("11_kwgam"), ExtResource("12_u7mvj"), ExtResource("14_djuvx"), ExtResource("15_l4yfc"), ExtResource("20_kofj4"), ExtResource("21_wb31c"), ExtResource("22_fvudk"), ExtResource("23_cn74g"), ExtResource("24_nradq")])
+upgrade_pool_weight = Array[int]([10, 20, 10, 20, 5, 5, 20, 10, 10, 20, 5])
 ability_pool = Array[Resource("res://resources/upgrades/ability_upgrade.gd")]([ExtResource("20_d1yqj"), ExtResource("21_lk67c"), ExtResource("22_ne1km")])
 ability_pool_weight = Array[int]([10, 10, 10])
 experience_manager = NodePath("../ExpierienceManager")
