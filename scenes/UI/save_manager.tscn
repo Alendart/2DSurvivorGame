@@ -1,0 +1,142 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba5j8af7g6g4y"]
+
+[ext_resource type="PackedScene" uid="uid://dypo0m4080kh3" path="res://scenes/UI/sound_button.tscn" id="1_2kys6"]
+
+[node name="SaveManager" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="SaveBox1" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SaveHeader" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Save slot #1"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternatePanelContainer"
+
+[node name="SaveSlot" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Player no:1
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+disabled = true
+text = "Choose"
+alignment = 0
+
+[node name="DeleteButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox1/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Delete"
+alignment = 2
+
+[node name="SaveBox2" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SaveHeader" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Save slot #2"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternatePanelContainer"
+
+[node name="SaveSlot" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Empty"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+text = "Choose"
+alignment = 0
+
+[node name="DeleteButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox2/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+size_flags_horizontal = 10
+disabled = true
+text = "Delete"
+alignment = 2
+
+[node name="SaveBox3" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SaveHeader" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Save slot #1"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternatePanelContainer"
+
+[node name="SaveSlot" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_type_variation = &"BlueOtlineLabel"
+text = "Empty"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+text = "Choose"
+alignment = 0
+
+[node name="DeleteButton" parent="MarginContainer/MarginContainer/VBoxContainer/SaveBox3/VBoxContainer/HBoxContainer" instance=ExtResource("1_2kys6")]
+layout_mode = 2
+size_flags_horizontal = 10
+disabled = true
+text = "Delete"
+alignment = 2
