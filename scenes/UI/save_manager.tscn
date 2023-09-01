@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://5nwe5eauf7bt" path="res://scenes/UI/save_box.tscn" id="2_qdles"]
 
 [node name="SaveManager" type="CanvasLayer"]
+process_mode = 3
+layer = 2
 script = ExtResource("1_optuq")
+save_box_scene = ExtResource("2_qdles")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -12,21 +15,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 80
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="SaveBox" parent="MarginContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_qdles")]
-layout_mode = 2
-
-[node name="SaveBox2" parent="MarginContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_qdles")]
-layout_mode = 2
-
-[node name="SaveBox3" parent="MarginContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_qdles")]
-layout_mode = 2
+mouse_filter = 2
