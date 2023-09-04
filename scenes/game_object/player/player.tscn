@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c1u2mn8scf1o6" path="res://assets/Audio/impactMining_002.ogg" id="7_05dlb"]
 [ext_resource type="AudioStream" uid="uid://d2ktl6kxncosq" path="res://assets/Audio/impactMining_003.ogg" id="8_vjq8c"]
 [ext_resource type="AudioStream" uid="uid://b0cugg4tpx7wu" path="res://assets/Audio/impactMining_004.ogg" id="9_gcv3s"]
+[ext_resource type="PackedScene" uid="uid://c32lwa73wkj3w" path="res://scenes/components/health_bar.tscn" id="10_1lcyh"]
 
 [sub_resource type="Animation" id="Animation_geq2f"]
 length = 0.001
@@ -97,14 +98,6 @@ _data = {
 "walk": SubResource("Animation_kk337")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14nub"]
-bg_color = Color(1, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.247059, 0.14902, 0.192157, 1)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xj5mt"]
 radius = 26.0
 
@@ -139,17 +132,7 @@ streams = Array[AudioStream]([ExtResource("5_p3w80"), ExtResource("6_ep506"), Ex
 wait_time = 0.5
 one_shot = true
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(28, 6)
-offset_left = -14.0
-offset_top = -22.0
-offset_right = 14.0
-offset_bottom = -16.0
-pivot_offset = Vector2(14, 3)
-theme_override_styles/fill = SubResource("StyleBoxFlat_14nub")
-max_value = 1.0
-value = 1.0
-show_percentage = false
+[node name="HealthBar" parent="." instance=ExtResource("10_1lcyh")]
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 16
