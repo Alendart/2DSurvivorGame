@@ -6,6 +6,8 @@ extends Node
 @export var wizard_enemy: PackedScene
 @export var dark_rat: PackedScene
 @export var ghost_enemy: PackedScene
+@export var boss_enemy: PackedScene
+
 @onready var timer: Timer = $Timer
 @onready var hyper_wave_timer: Timer = $HyperWaveTimer
 
@@ -61,6 +63,12 @@ func _on_timer_timeout():
 	enemy_instance.global_position = get_spawn_position()
 	
 
+func start_boss_fight():
+	var boss_enemy_instance = boss_enemy.instantiate()
+	var entites_layer = get_tree().get_first_node_in_group("entities_layer")
+	entites_layer.add_child(boss_enemy_instance)
+	boss_enemy_instance.global_position = get_spawn_position()
+
 func on_rise_difficulty(lvl:int):
 	var new_wait_time = base_wait_time - (lvl * difficulty_timer_decrease)
 	if new_wait_time <= 0.05:
@@ -70,8 +78,10 @@ func on_rise_difficulty(lvl:int):
 	else:
 		timer.wait_time = new_wait_time
 	
+	
 	if lvl == 10:
 		enemy_table.add_item(tough_rat,10)
+		start_boss_fight()
 	if lvl == 20:
 		enemy_table.add_item(wizard_enemy,15)
 	if lvl == 30:
